@@ -5,6 +5,7 @@ import MainBlock03 from './main/main_block03.jsx';
 import MainBlock04 from './main/main_block04.jsx';
 import MainBlock05 from './main/main_block05.jsx';
 import MainBlock06 from './main/main_block06.jsx';
+import MainBlock07 from './main/main_block07.jsx';
 
 const Home = () => (
   <>
@@ -14,6 +15,7 @@ const Home = () => (
     <MainBlock04 />
     <MainBlock05 />
     <MainBlock06 />
+    <MainBlock07 />
   </>
 );
 

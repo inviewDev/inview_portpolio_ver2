@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-route
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import './css/main.scss';
 import Header from './common/header.jsx';
+import Footer from './common/footer.jsx';
 import Home from './main_home.jsx';
 import ServiceIntroduction from './sub/sub_p001.jsx';
 import WebsiteDesign from './sub/sub_p002.jsx';
@@ -43,6 +44,7 @@ function App() {
           </div>
         </CSSTransition>
       </SwitchTransition>
+      <Footer />
     </>
   );
 }
