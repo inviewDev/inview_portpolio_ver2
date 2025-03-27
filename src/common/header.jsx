@@ -15,11 +15,7 @@ const Header = () => {
         trigger: header,
         start: 'top top',
         end: '+=400',
-        markers: {
-          startColor: 'green',
-          endColor: 'red',
-          fontSize: '16px',
-        },
+        markers: false,
         onEnter: () => {
           gsap.to(header, {
             width: '60%',
