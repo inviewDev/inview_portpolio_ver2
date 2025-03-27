@@ -23,12 +23,12 @@ const images = [
 
 const txt_P = [
     '카페24 솔루션으로 손쉽게 관리 가능한 홈페이지',
-    'PC, 모바일 어떤 기기기에도 반응하는 반응형 홈페이지',
+    'PC, 모바일 어떤 기기에도 반응하는 반응형 홈페이지',
     '더 많은 가입자를 끌어들이는 간편한 소셜 로그인 기능',
     '검색엔진에 상위 노출 될 수 있는 SEO 최적화 작업 제공',
     '강력하고 쉬운 유지보수 도구로 관리가 쉽고 간단한 수정이 가능',
     '방문자 통계, 쇼핑몰 매출 등 통계 기능을 기본으로 지원',
-    '구글 Ads 전환추척/애널리틱스 등 전환추적 리타게팅 관리도구 작업',
+    '구글 Ads 전환추적/애널리틱스 등 전환추적 리타게팅 관리도구 작업',
     '네이버, Kakao 채널톡 등의 상담 바로가기 기능 제공',
 ];
 
@@ -37,6 +37,7 @@ const MainBlock02 = () => {
         gsap.registerPlugin(ScrollTrigger);
         const section = document.querySelector('.main_block02');
         const mainBlock01 = document.querySelector('.main_block01');
+
         if (section && mainBlock01) {
             const mainBlock01Height = 2900;
             ScrollTrigger.create({
@@ -53,19 +54,23 @@ const MainBlock02 = () => {
                 },
                 markers: false,
             });
+
             const listItems = section.querySelectorAll('.img_box ul li');
             listItems.forEach((item, index) => {
+                gsap.set(item, { opacity: 0, y: 20 });
+
                 gsap.to(item, {
-                    x: 0,
                     opacity: 1,
-                    duration: 1,
-                    delay: index * 0.2,
+                    y: 0,
+                    duration: 0.8,
+                    delay: index * 0.1,
                     ease: 'power2.out',
                     scrollTrigger: {
                         trigger: item,
                         start: 'top 80%',
                         end: 'bottom 20%',
                         toggleActions: 'play none none reverse',
+                        once: true,
                     },
                 });
             });

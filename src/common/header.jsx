@@ -34,8 +34,6 @@ const Header = () => {
           padding: '10px 0',
         });
       }
-
-      console.log('현재 스크롤 위치:', scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
