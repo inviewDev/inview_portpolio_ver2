@@ -370,9 +370,8 @@
 
 // main_block04
 .main_block04 {
-  // background: linear-gradient(180deg, #eaf2f9 0%, rgba(218, 233, 243, 0) 100%);
   background:#eaf2f9;
-  padding-bottom:120px;
+  padding:0 20px 120px;
   .cont_box{
     padding-top:40px;
     ul{
@@ -460,7 +459,11 @@
 
 // main_block06
 .main_block06 {
+  padding:120px 20px 120px;
+  background: linear-gradient(180deg, #eaf2f9 0%, rgba(218, 233, 243, 0) 100%);
   .portCont{
+    margin-bottom: 40px;
+    padding-top: 40px;
     ul{
       display: flex;
       flex-wrap: wrap;
@@ -490,5 +493,21 @@
           line-height: 26px;}
       }
     }
+  }
+  .loadMore{
+    width: 100%;
+    max-width: 160px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 25px;
+    border: 1px #354049 solid;
+    color: #354049;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    background: none;
   }
 }

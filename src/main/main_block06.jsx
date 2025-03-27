@@ -4,17 +4,17 @@ import portData from '../dataBox/portData.json';
 const MainBlock05 = () => {
     const iframeRef = useRef(null);
     const [scale, setScale] = useState(1);
-    const [visibleCount, setVisibleCount] = useState(12); // 처음에 보이는 항목 수
+    const [visibleCount, setVisibleCount] = useState(12);
 
     const handleResize = () => {
         if (iframeRef.current) {
             const parentWidth = iframeRef.current.parentElement.offsetWidth;
-            const targetWidth = 1920; // 원래 사이트의 폭
-            const targetHeight = 1080; // 원래 사이트의 높이
+            const targetWidth = 1920;
+            const targetHeight = 1080;
             const scaleWidth = parentWidth / targetWidth;
-            const scaleHeight = 270 / targetHeight; // li 높이에 맞춤
+            const scaleHeight = 270 / targetHeight;
 
-            setScale(Math.min(scaleWidth, scaleHeight)); // 작은 값으로 설정
+            setScale(Math.min(scaleWidth, scaleHeight));
         }
     };
 
