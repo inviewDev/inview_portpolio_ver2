@@ -30,7 +30,7 @@
     margin: 0 auto;
   }
   h1 {
-    color: #354049;
+    color: $pri_color;
     font-size: 40px;
     font-weight: 500;
     line-height: 60px;
@@ -173,7 +173,7 @@
   height: auto;
   position: relative;
   h1 {
-    color: #354049;
+    color: $pri_color;
     font-size: 40px;
     font-weight: 500;
     line-height: 60px;
@@ -212,14 +212,14 @@
               line-height: 24px;
             }
             .p_sale {
-              color: #354049;
+              color: $pri_color;
               font-size: 40px;
               font-weight: 600;
               line-height: 50px;
             }
           }
           .details {
-            color: #354049;
+            color: $pri_color;
             font-size: 20px;
             font-weight: 600;
             line-height: 30px;
@@ -248,7 +248,7 @@
             }
           }
           .option {
-            color: #354049;
+            color: $pri_color;
             font-size: 16px;
             font-weight: 600;
             line-height: 26px;
@@ -346,7 +346,7 @@
               justify-content: space-between;
               width: 100%;
               p {
-                color: #354049;
+                color: $pri_color;
                 font-size: inherit;
                 font-weight: inherit;
                 line-height: inherit;
@@ -357,7 +357,7 @@
                 line-height: inherit;
                 color: #7d8b96;
                 i {
-                  color: #354049;
+                  color: $pri_color;
                 }
               }
             }
@@ -390,7 +390,7 @@
           align-items: center;
           gap: 0 8px;
           p{
-            color: #354049;
+            color: $pri_color;
             font-size: 20px;
             font-weight: 600;
             line-height: 26px;}
@@ -487,7 +487,7 @@
           }
           margin-bottom:12px;
         }
-        p.name{color: #354049;
+        p.name{color: $pri_color;
           font-size: 16px;
           font-weight: 500;
           line-height: 26px;}
@@ -503,8 +503,8 @@
     justify-content: center;
     margin: 0 auto;
     border-radius: 25px;
-    border: 1px #354049 solid;
-    color: #354049;
+    border: 1px $pri_color solid;
+    color: $pri_color;
     font-size: 16px;
     font-weight: 500;
     line-height: 18px;

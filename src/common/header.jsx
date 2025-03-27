@@ -1,53 +1,50 @@
 import { Link } from 'react-router-dom';
 import logo_img from '../assets/logo/logo_w.svg';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Header = () => {
+  const hasAnimated = useRef(false); // 애니메이션이 실행되었는지 여부를 저장
+
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const header = document.getElementById('header');
+    const header = document.getElementById('header');
 
-      const scrollTrigger = ScrollTrigger.create({
-        trigger: header,
-        start: 'top top',
-        end: '+=400',
-        markers: false,
-        onEnter: () => {
-          gsap.to(header, {
-            width: '60%',
-            duration: 1,
-            ease: "elastic.inOut(1,0.75)",
-            backgroundColor: 'rgb(65 65 65,0.7)',
-            borderRadius: '50px',
-            padding: '10px',
-          });
-        },
-        onLeaveBack: () => {
-          gsap.to(header, {
-            width: '100%',
-            duration: 0.8,
-            ease: "elastic.inOut(1,1)",
-            backgroundColor: 'rgb(65 65 65,0)',
-            border: 'none',
-            borderRadius: '50px',
-            padding: '10px 0',
-          });
-        },
-      });
-      const refreshMarkers = () => scrollTrigger.markers = true;
-      ScrollTrigger.addEventListener('refresh', refreshMarkers);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
 
-      return () => {
-        ScrollTrigger.removeEventListener('refresh', refreshMarkers);
-      };
-    });
+      if (scrollY >= 900 && !hasAnimated.current) {
+        hasAnimated.current = true; // 애니메이션 실행 플래그 설정
+        gsap.to(header, {
+          width: '60%',
+          duration: 1,
+          ease: "elastic.inOut(1,0.75)",
+          backgroundColor: 'rgb(65 65 65,0.7)',
+          borderRadius: '50px',
+          padding: '10px',
+        });
+      } else if (scrollY < 900 && hasAnimated.current) {
+        hasAnimated.current = false; // 애니메이션 실행 플래그 초기화
+        gsap.to(header, {
+          width: '100%',
+          duration: 0.8,
+          ease: "elastic.inOut(1,1)",
+          backgroundColor: 'rgb(65 65 65,0)',
+          border: 'none',
+          borderRadius: '50px',
+          padding: '10px 0',
+        });
+      }
 
-    return () => ctx.revert();
+      console.log('현재 스크롤 위치:', scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
   return (
     <header id="header">
       <div className="pc_nav_wrap">
