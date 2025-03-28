@@ -19,6 +19,7 @@ end: `+=${totalScroll}`,
 pin: true,
 scrub: 0.5,
 markers: false,
+toggleActions: 'play none none reset',
 onUpdate: self => {
 const progress = self.progress;
 

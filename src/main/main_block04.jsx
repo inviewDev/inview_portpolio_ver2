@@ -12,36 +12,34 @@ const MainBlock04 = () => {
         if (sectionRef.current && listRef.current) {
             const lis = listRef.current.children;
 
-            // 부모 요소에 Pin 옵션 적용
             gsap.to(sectionRef.current, {
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     pin: true,
                     start: 'top top',
-                    end: '+=1500', // 애니메이션 총 길이 늘림
+                    end: '+=1500',
                     scrub: 0.3,
                     markers: false,
                 },
             });
 
-            // 각 li 요소에 애니메이션 적용
             gsap.fromTo(lis, {
                 autoAlpha: 0,
                 y: 50,
             }, {
                 autoAlpha: 1,
                 y: 0,
-                stagger: 0.2, // 각 요소가 0.2초 간격으로 등장
+                stagger: 0.2,
                 scrollTrigger: {
                     trigger: sectionRef.current,
                     start: 'top 50%',
                     end: 'bottom 10%',
                     scrub: true,
                     markers: false,
-                    toggleActions: 'play none none reset', // 애니메이션을 반복하지 않도록 설정
+                    toggleActions: 'play none none reset',
                 },
                 duration: 1,
-                ease: 'power2.out', // 애니메이션의 속도와 효과 강화
+                ease: 'power2.out',
             });
         }
     }, []);

@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 const Header = () => {
-  const hasAnimated = useRef(false); // 애니메이션이 실행되었는지 여부를 저장
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const header = document.getElementById('header');
@@ -13,25 +13,27 @@ const Header = () => {
       const scrollY = window.scrollY;
 
       if (scrollY >= 900 && !hasAnimated.current) {
-        hasAnimated.current = true; // 애니메이션 실행 플래그 설정
-        gsap.to(header, {
-          width: '60%',
-          duration: 1,
-          ease: "elastic.inOut(1,0.75)",
-          backgroundColor: 'rgb(65 65 65,0.7)',
-          borderRadius: '50px',
-          padding: '10px',
-        });
-      } else if (scrollY < 900 && hasAnimated.current) {
-        hasAnimated.current = false; // 애니메이션 실행 플래그 초기화
+        hasAnimated.current = true;
         gsap.to(header, {
           width: '100%',
+          maxWidth: "900px",
+          duration: 1,
+          ease: "elastic.inOut(1,0.75)",
+          backgroundColor: 'rgba(65 65 65,0.7)',
+          borderRadius: '50px',
+          padding: '10px 20px',
+        });
+      } else if (scrollY < 900 && hasAnimated.current) {
+        hasAnimated.current = false;
+        gsap.to(header, {
+          width: '100%',
+          maxWidth: "100%",
           duration: 0.8,
           ease: "elastic.inOut(1,1)",
-          backgroundColor: 'rgb(65 65 65,0)',
+          backgroundColor: 'rgba(65 65 65,0)',
           border: 'none',
           borderRadius: '50px',
-          padding: '10px 0',
+          padding: '10px 20px',
         });
       }
     };

@@ -233,10 +233,11 @@ a {
 // header
 #header {
   width: 100%;
+  max-width:100%;
   position: fixed;
   z-index: 999;
   top: 10px;
-  padding-top: 10px;
+  padding: 10px 20px 0;
   left: 50%;
   transform: translateX(-50%);
 
@@ -248,6 +249,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 0 20px;
 
     .logo_wrap {
       width: 100%;
@@ -266,6 +268,7 @@ a {
 
     nav {
       width: 100%;
+      min-width: 700px;
 
       ul {
         display: flex;

@@ -432,6 +432,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      padding:0 20px;
     }
 
     .cont_box {
@@ -553,7 +554,7 @@
         gap: 20px;
 
         li {
-          width: 100%;
+          width: calc((100% / 4) - 15px);
           max-width: 415px;
           overflow: hidden;
 
