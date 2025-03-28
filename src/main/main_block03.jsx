@@ -18,7 +18,7 @@ const MainBlock03 = () => {
     const split = new SplitType(h1Element);
 
     const parLis = gsap.utils.toArray('.main_block03 li.par_li', section);
-    const totalScroll = parLis.reduce((acc, li) => acc + li.offsetHeight + 100, 0);
+    const totalScroll = parLis.reduce((acc, li) => acc + li.offsetHeight + 50, 0);
 
     try {
       ScrollTrigger.create({

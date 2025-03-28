@@ -25,7 +25,7 @@ const MainBlock04 = () => {
                     trigger: sectionRef.current,
                     pin: true,
                     start: 'top top',
-                    end: '+=1500',
+                    end: '+=1000',
                     scrub: 0.3,
                     markers: false,
                     onEnter: () => {
@@ -50,7 +50,7 @@ const MainBlock04 = () => {
                 stagger: 0.2,
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: 'top 50%',
+                    start: 'top 10%',
                     end: 'bottom 10%',
                     scrub: true,
                     markers: false,

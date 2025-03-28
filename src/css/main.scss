@@ -51,7 +51,7 @@
 .main_block01 {
   overflow: hidden;
   background: rgb(35 35 35 / 93%);
-  height: 2900px;
+  height: 2000px;
   min-height: 100vh;
   position: relative;
   top: 0;
@@ -120,6 +120,23 @@
   }
 }
 
+.scroll_indi {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -20px); }
+  60% { transform: translate(-50%, -10px); }
+}
+
 // main_block02
 .main_block02 {
   background: #333;
@@ -127,7 +144,7 @@
   height: auto;
   position: relative;
   overflow: hidden;
-  margin-top: 2800px;
+  margin-top: 2000px;
 
   article {
     display: flex;
