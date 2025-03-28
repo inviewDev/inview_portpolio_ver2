@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import main_top_img from '../assets/main_top_img.webp';
-import { Scrollbar } from 'smooth-scrollbar-react';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -126,7 +125,6 @@ const MainBlock01 = () => {
   }, []);
 
   return (
-    <Scrollbar damping={0.01} speed={0.5} continuousScrolling={true}>
       <section className='main_block01'>
         <article>
           <h1></h1>
@@ -137,7 +135,6 @@ const MainBlock01 = () => {
         <div className="dimmed_Box"></div>
         <img src={main_top_img} alt="메인 이미지" style={{ display: 'block' }}/>
       </section>
-    </Scrollbar>
   );
 };
 
