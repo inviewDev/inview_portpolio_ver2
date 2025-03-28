@@ -37,12 +37,14 @@ const MainBlock05 = () => {
                         {portData.slice(0, visibleCount).map((item, index) => (
                             <li key={index}>
                                 <div>
-                                    <iframe
-                                        ref={iframeRef}
-                                        src={item.url}
-                                        style={{ transform: `scale(${scale})`, }}
-                                        title={item.descript}
-                                    />
+                                    <a href={item.url} target='_blank'>
+                                        <iframe
+                                            ref={iframeRef}
+                                            src={item.url}
+                                            style={{ transform: `scale(${scale})`, }}
+                                            title={item.descript}
+                                        />
+                                    </a>
                                 </div>
                                 <p className='name'>{item.name}</p>
                             </li>

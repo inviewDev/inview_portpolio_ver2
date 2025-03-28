@@ -15,8 +15,7 @@ const Header = () => {
       if (scrollY >= 900 && !hasAnimated.current) {
         hasAnimated.current = true;
         gsap.to(header, {
-          width: '100%',
-          maxWidth: "900px",
+          width: '1000px',
           duration: 1,
           ease: "elastic.inOut(1,0.75)",
           backgroundColor: 'rgba(65 65 65,0.7)',
@@ -27,8 +26,7 @@ const Header = () => {
         hasAnimated.current = false;
         gsap.to(header, {
           width: '100%',
-          maxWidth: "100%",
-          duration: 0.8,
+          duration: 1,
           ease: "elastic.inOut(1,1)",
           backgroundColor: 'rgba(65 65 65,0)',
           border: 'none',

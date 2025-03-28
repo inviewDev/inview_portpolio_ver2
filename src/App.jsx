@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     ScrollTrigger.refresh();
-    console.log('Route changed to:', location.pathname); // 디버깅
+    console.log('Route changed to:', location.pathname);
   }, [location.pathname]);
 
   return (

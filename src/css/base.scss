@@ -3,6 +3,7 @@
 /* ///// */
 html,
 body {
+  scroll-behavior: smooth;
   width: 100%;
   max-width: initial !important;
   scroll-behavior: smooth;
@@ -233,7 +234,6 @@ a {
 // header
 #header {
   width: 100%;
-  max-width:100%;
   position: fixed;
   z-index: 999;
   top: 10px;

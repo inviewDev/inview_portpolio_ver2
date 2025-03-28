@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { gsap, ScrollTrigger } from 'gsap/all';
+import SplitType from 'split-type';
 import contData from '../dataBox/serviceData.json';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -7,10 +8,17 @@ gsap.registerPlugin(ScrollTrigger);
 const MainBlock04 = () => {
     const sectionRef = useRef(null);
     const listRef = useRef(null);
+    const h1Ref = useRef(null);
 
     useEffect(() => {
         if (sectionRef.current && listRef.current) {
             const lis = listRef.current.children;
+            const section = sectionRef.current;
+            if (!section) return;
+            const h1Element = h1Ref.current;
+            if (!h1Element) return;
+            
+              const split = new SplitType(h1Element);
 
             gsap.to(sectionRef.current, {
                 scrollTrigger: {
@@ -20,6 +28,16 @@ const MainBlock04 = () => {
                     end: '+=1500',
                     scrub: 0.3,
                     markers: false,
+                    onEnter: () => {
+                      gsap.to(split.chars, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.5,
+                        stagger: 0.1,
+                        ease: "power2.out"
+                      });
+                      gsap.set(split.chars, { opacity: 1, y: 20 });
+                    },
                 },
             });
 
@@ -47,7 +65,7 @@ const MainBlock04 = () => {
     return (
         <section ref={sectionRef} className='main_block04'>
             <article>
-                <h1>무상으로 제공하는 최상의 서비스</h1>
+            <h1 ref={h1Ref}>어디서도 볼 수 없는 저렴한 비용</h1>
                 <div className="cont_box">
                     <ul ref={listRef}>
                         {contData.map((item, index) => (
