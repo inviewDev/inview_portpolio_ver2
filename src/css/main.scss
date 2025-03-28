@@ -603,6 +603,25 @@
                 content: "";
                 opacity:1;
               }
+              &::before{
+                content: "사이트 방문";
+                color: #fff;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 26px;
+                position: absolute;
+                display: flex;
+                width: 130px;
+                height: 45px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                border: 1px solid #fff;
+                border-radius: 40px;
+                align-items: center;
+                justify-content: center;
+              }
             }
           }
         }
