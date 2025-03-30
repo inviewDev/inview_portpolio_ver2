@@ -666,7 +666,7 @@ $wh_color: #fff;
           }
           iframe {
             width: 1920px;
-            height: 1250px;
+            height: 300vh;
             transform-origin: top left;
             border: none;
             display: block;
@@ -756,4 +756,161 @@ $wh_color: #fff;
       }
     }
   }
+}
+
+
+@media screen and (max-width: 1024px) {
+  /* ///// */
+.inq_btn {
+  max-width: 120px;
+  height: 45px;
+  a {
+    font-size:14px;
+    line-height: 45px;}
+  }
+[class*="main_block"] {
+  article {}
+  h1 {}
+}
+// main_block01
+.main_block01 {
+  article {
+    h1 {
+      font-size: 40px;
+      line-height: 60px;
+      span {}
+    }
+    p {}
+  }
+  .inq_btn {margin-top:30px;}
+  img {max-width:500px;}
+  .dimmed_Box {}
+}
+
+/* main_block02 */
+.main_block02 {
+  padding:60px 20px;
+  article {
+    flex-direction: column;
+    .txt_box {
+      margin-bottom:12px;
+      h2 {
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom:10px;
+      }
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;}
+    }
+    .img_box {
+      ul {
+        gap:10px;
+        li {
+          max-width: calc(25% - 8px);
+          border-radius:10px;
+          img {max-width:80px;padding:0;}
+          p {margin-top:8px;}
+        }
+      }
+    }
+  }
+}
+
+/* main_block03 */
+.main_block03 {
+  padding:60px 20px;
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;}
+  div.img_box {
+    > ul {
+      > li {
+        .top_cont {
+          .grade {}
+
+          .price {
+            .p_cost {}
+            .p_sale {}
+          }
+
+          .details {}
+
+          .pick {
+            [class*="pick_"] {}
+          }
+
+          .option {}
+
+          &.SILVER {
+            .grade {}
+            .pick {
+              .pick_01 {}
+              .pick_02 {}
+            }
+          }
+
+          &.GOLD {
+            .grade {}
+            .pick {
+              .pick_01 {}
+              .pick_02 {}
+            }
+          }
+
+          &.PLATINUM {
+            .grade {}
+            .pick {
+              .pick_01 {}
+              .pick_02 {}
+            }
+          }
+
+          &.DIAMOND {
+            .grade {}
+            .pick {
+              .pick_01 {}
+              .pick_02 {}
+            }
+          }
+        }
+
+        .bot_cont {
+          ul {
+            li {
+              p {}
+
+              span {
+                i {}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* main_block04 */
+.main_block04 {
+  article {}
+
+  .cont_box {
+    ul {
+      li {
+        .info_box {
+          p {}
+        }
+
+        .s_info_box {
+          p {}
+        }
+
+        i.icon {}
+      }
+    }
+  }
+}
 }

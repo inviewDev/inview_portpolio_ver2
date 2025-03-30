@@ -8,41 +8,40 @@ const Header = () => {
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    const header = document.getElementById('header');
+    const header = document.getElementById("header");
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
-      if (scrollY >= 300 && !hasAnimated.current) {
-        hasAnimated.current = true;
-        gsap.to(header, {
-          width: '1000px',
-          duration: 1,
-          ease: "elastic.inOut(1,0.75)",
-          backgroundColor: 'rgba(65 65 65,0.7)',
-          borderRadius: '50px',
-          padding: '10px 20px',
-          top:'10px',
-        });
-      } else if (scrollY < 500 && hasAnimated.current) {
-        hasAnimated.current = false;
-        gsap.to(header, {
-          width: '100%',
-          duration: 1,
-          ease: "elastic.inOut(1,1)",
-          backgroundColor: 'rgba(65 65 65,0)',
-          border: 'none',
-          borderRadius: '0',
-          padding: '10px 20px',
-          top:'0',
-        });
+      if (window.innerWidth >= 1025) {
+        if (scrollY >= 300 && !hasAnimated.current) {
+          hasAnimated.current = true;
+          gsap.to(header, {
+            width: "1000px",
+            duration: 1,
+            ease: "elastic.inOut(1,0.75)",
+            backgroundColor: "rgba(65, 65, 65, 0.7)",
+            borderRadius: "50px",
+            padding: "10px 20px",
+            top: "10px",
+          });
+        } else if (scrollY < 500 && hasAnimated.current) {
+          hasAnimated.current = false;
+          gsap.to(header, {
+            width: "100%",
+            duration: 1,
+            ease: "elastic.inOut(1,1)",
+            backgroundColor: "rgba(65, 65, 65, 0)",
+            border: "none",
+            borderRadius: "0",
+            padding: "10px 20px",
+            top: "0",
+          });
+        }
       }
     };
-
-    window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

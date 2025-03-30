@@ -6,8 +6,6 @@ body {
   scroll-behavior: smooth;
   width: 100%;
   max-width: initial !important;
-  scroll-behavior: smooth;
-
   &.mNavActive {
     overflow: hidden;
   }
@@ -429,4 +427,60 @@ a {
       }
     }
   }
+}
+
+/* responsive */
+@media screen and (max-width: 1024px) {
+// header
+#header {
+  .pc_nav_wrap {
+    min-width:initial;
+    .logo_wrap {
+      max-width:160px;
+      a {
+        max-width:160px;
+        img {}
+      }
+    }
+    nav {
+      min-width:initial;
+      ul {
+        gap:0 30px;
+        li {
+          a {font-size:14px;}
+          &.inq_btn {
+            max-width:120px;
+            height:45px;
+            a {line-height:45px;}
+          }
+        }
+      }
+    }
+  }
+}
+
+// sub header
+.sub {
+  #header {
+    nav {
+      ul {
+        li {
+          a {}
+        }
+      }
+    }
+    .logo_wrap {
+      a:nth-child(1) {}
+    }
+  }
+}
+
+// main header
+.main {
+  #header {
+    .logo_wrap {
+      a:nth-child(2) {}
+    }
+  }
+}
 }
