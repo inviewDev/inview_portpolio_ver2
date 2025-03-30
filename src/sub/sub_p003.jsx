@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 import AOS from "aos";
 
 const tableData = {
-    구분: ['실버', '골드', '플래티넘'],
-    비용: ['50만원', '100만원', '150만원부터'],
+    구분: ['골드', '플래티넘', '다이아몬드'],
+    비용: ['100만원', '150만원부터', '견적문의'],
     기본구성: [
-        '· PC + 모바일 반응형 <br/>· 템플릿 선택(텍스트, 이미지 등 내용 변경) <br/>· 메인 + 서브 5페이지',
         '· PC + 모바일 반응형 <br/>· 템플릿 선택(텍스트, 이미지 등 내용 변경) <br/>· 메인 + 서브 10페이지',
         '· PC + 모바일 반응형 <br/>· 템플릿 선택(텍스트, 이미지 등 내용 변경) <br/>· 메인 + 서브 15페이지',
     ],
-    제작기간: ['자료전달 완료 후 1일', '자료전달 완료 후 3일', '자료전달 완료 후 24일'],
+    제작기간: ['자료전달 완료 후 3일', '자료전달 완료 후 24일'],
     무상제공: [
         '텍스트, 이미지 변경 / 이미지,폰트 정품 라이센스 / SEO 검색엔진 최적화 / 홈페이지 등록',
     ],
@@ -83,9 +82,9 @@ const optionData = [
         aos_d: "100" 
     },
     {
-        title: '콘텐츠 효과 변경',
+        title: '콘텐츠 애니메이션 변경',
         description:
-            '이미지형 게시판 (썸네일 이미지, 제목, 작성일, 조회수 , 내용, 첨부파일)',
+            '기본적으로 제공되는 스크롤 애니메이션에서 원하는 스타일로 변경',
         unit: '1 개',
         price: '3,000',
         aos_d: "100" 
@@ -116,7 +115,7 @@ const optionData = [
     },
 ];
 
-const WebsiteDesign = () => {
+const Ecommerce = () => {
     useEffect(() => {
         AOS.init();
     }, [])
@@ -125,7 +124,7 @@ const WebsiteDesign = () => {
         <section className='sub_p002'>
             <article>
                 <div className="sub_tit" data-aos="fade-down">
-                    <sub>홈페이지 디자인</sub>
+                    <sub>쇼핑몰 디자인</sub>
                 </div>
                 <div className="table_Cont">
                     <table className='tb_pc' data-aos="fade-down" data-aos-delay="300">
@@ -133,7 +132,7 @@ const WebsiteDesign = () => {
                             <col style={{ width: "200px" }} />
                             <col style={{ width: "auto" }} />
                             <col style={{ width: "auto" }} />
-                            <col style={{ width: "auto" }} />
+                            <col style={{ width: "360px" }} />
                         </colgroup>
                         <tr>
                             <th><p>구분</p></th>
@@ -145,19 +144,17 @@ const WebsiteDesign = () => {
                             <td><p>비용</p></td>
                             <td><p>{tableData.비용[0]}</p></td>
                             <td><p>{tableData.비용[1]}</p></td>
-                            <td><p>{tableData.비용[2]}</p></td>
+                            <td rowSpan={3}><p>{tableData.비용[2]}</p></td>
                         </tr>
                         <tr>
                             <td><p>기본구성</p></td>
                             <td className='compo'><p dangerouslySetInnerHTML={{ __html: tableData.기본구성[0] }} /></td>
                             <td className='compo'><p dangerouslySetInnerHTML={{ __html: tableData.기본구성[1] }} /></td>
-                            <td className='compo'><p dangerouslySetInnerHTML={{ __html: tableData.기본구성[2] }} /></td>
                         </tr>
                         <tr>
                             <td><p>제작기간</p></td>
                             <td><p>{tableData.제작기간[0]}</p></td>
                             <td><p>{tableData.제작기간[1]}</p></td>
-                            <td><p>{tableData.제작기간[2]}</p></td>
                         </tr>
                         <tr>
                             <td><p>무상제공</p></td>
@@ -204,4 +201,4 @@ const WebsiteDesign = () => {
     );
 };
 
-export default WebsiteDesign;
+export default Ecommerce;

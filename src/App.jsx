@@ -1,18 +1,32 @@
 import { useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition, SwitchTransition } from "react-transition-group";
+import './css/base.scss';
 import './css/main.scss';
+import './css/sub.scss';
 import Header from './common/header.jsx';
 import Footer from './common/footer.jsx';
 import Home from './main_home.jsx';
 import ServiceIntroduction from './sub/sub_p001.jsx';
 import WebsiteDesign from './sub/sub_p002.jsx';
+import EcommerceDesign from './sub/sub_p003.jsx';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const scrollTarget = document.documentElement || document.body;
+    scrollTarget.scrollTo(0, 0);
+    ScrollTrigger.refresh();
+  }, [pathname]);
+  return null;
+};
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/ServiceIntroduction", name: "Service Introduction", Component: ServiceIntroduction },
   { path: "/WebsiteDesign", name: "Website Design", Component: WebsiteDesign },
+  { path: "/EcommerceDesign", name: "EcommerceDesign", Component: EcommerceDesign },
 ];
 
 function App() {
@@ -20,8 +34,14 @@ function App() {
   const nodeRef = useRef(null);
 
   useEffect(() => {
+    if (location.pathname !== '/') {
+      document.body.classList.add('sub');
+      document.body.classList.remove('main');
+    } else {
+      document.body.classList.add('main');
+      document.body.classList.remove('sub');
+    }
     ScrollTrigger.refresh();
-    console.log('Route changed to:', location.pathname);
   }, [location.pathname]);
 
   return (
@@ -51,6 +71,7 @@ function App() {
 
 const AppWrapper = () => (
   <Router>
+    <ScrollToTop />
     <App />
   </Router>
 );
