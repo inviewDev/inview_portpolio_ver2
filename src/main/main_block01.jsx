@@ -49,7 +49,7 @@ const MainBlock01 = () => {
       });
 
       gsap.set([main01_img],{
-        x: 50,
+        xPercent: -50,
       })
       gsap.set([main01_img, main01_dimme], { 
         opacity: 0, 
@@ -62,7 +62,7 @@ const MainBlock01 = () => {
         duration: 1
       }, 0.5).to(main01_img, {
         opacity: 1,
-        x: 50,
+        xxPercent: -50,
         y: 0,
         duration: 1.5,
         ease: 'power3.out'
@@ -81,7 +81,6 @@ const MainBlock01 = () => {
         }
       });
 
-      // 6. 스크롤 유도 텍스트 애니메이션
       if (scrollIndicator) {
         const indicatorTl = gsap.timeline({ 
           delay: 2 
@@ -108,7 +107,6 @@ const MainBlock01 = () => {
         });
       }
 
-      // 7. 클린업 함수
       return () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
         timeline.kill();

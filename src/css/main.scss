@@ -189,6 +189,12 @@ $wh_color: #fff;
           border-radius: 20px;
           padding: 20px;
           text-align: center;
+          transition: margin-top 0.2s ease-in-out;
+          @media (hover: hover) and (pointer: fine) {
+            &:hover {
+              margin-top:-10px;
+            }
+          }
 
           img {
             width: 100%;

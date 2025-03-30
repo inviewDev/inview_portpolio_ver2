@@ -58,7 +58,6 @@ const MainBlock02 = () => {
           markers: false,
         });
 
-        // h2와 p에 Parallax 효과 추가
         gsap.set(h2Element, { opacity: 0, y: 20 });
         gsap.set(pElement, { opacity: 0, y: 20 });
 
@@ -80,7 +79,7 @@ const MainBlock02 = () => {
           opacity: 1,
           y: 0,
           duration: 0.8,
-          delay: 0.2, // h2 애니메이션 후에 실행되도록 delay 설정
+          delay: 0.2,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: pElement,

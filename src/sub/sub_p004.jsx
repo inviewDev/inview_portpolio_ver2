@@ -13,19 +13,16 @@ const Sample = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
 
-    // ✅ 총 페이지 수 계산
     const totalPages = Math.ceil(sampleData.length / itemsPerPage);
     
-    // ✅ 페이지 변경 핸들러
     const goToPage = (page) => {
         setCurrentPage(Math.max(1, Math.min(page, totalPages)));
     };
 
-    // ✅ MainBlock05와 동일한 스케일 계산 로직
     const handleResize = () => {
         if (iframeRef.current) {
             const parentWidth = iframeRef.current.parentElement.offsetWidth;
-            const targetWidth = 1920; // 고정 너비 기준
+            const targetWidth = 1920;
             const targetHeight = 1080;
             const scaleWidth = parentWidth / targetWidth;
             const scaleHeight = 270 / targetHeight;
@@ -40,8 +37,6 @@ const Sample = () => {
         AOS.init();
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-    
-    // ✅ 페이지 번호 배열 생성
     const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
     
     return (
