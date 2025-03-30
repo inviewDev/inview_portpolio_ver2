@@ -16,7 +16,6 @@ const MainBlock01 = () => {
     const scrollIndicator = document.querySelector('.scroll_indi');
 
     if (section && main01_h1 && main01_img && main01_dimme && inqBtn) {
-      // 1. 텍스트 문자 단위 애니메이션
       const createLetterSpans = (line) => {
         return line.split('').map((char) => {
           const randomY = Math.random() * (200 - 10) + 10;
@@ -28,7 +27,6 @@ const MainBlock01 = () => {
       const secondLine = '아이엔뷰에선 가능합니다.';
       main01_h1.innerHTML = `${createLetterSpans(firstLine)}<br/>${createLetterSpans(secondLine)}`;
 
-      // 2. 메인 타임라인 설정
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -40,7 +38,6 @@ const MainBlock01 = () => {
         }
       });
 
-      // 3. 텍스트 애니메이션
       const letters = main01_h1.querySelectorAll('.letter');
       letters.forEach((letter, index) => {
         timeline.to(letter, {
@@ -51,7 +48,9 @@ const MainBlock01 = () => {
         }, index < firstLine.length ? 0 : 1.5);
       });
 
-      // 4. 이미지 & 디머드 박스 애니메이션
+      gsap.set([main01_img],{
+        x: 50,
+      })
       gsap.set([main01_img, main01_dimme], { 
         opacity: 0, 
         y: -100 
@@ -63,12 +62,12 @@ const MainBlock01 = () => {
         duration: 1
       }, 0.5).to(main01_img, {
         opacity: 1,
+        x: 50,
         y: 0,
         duration: 1.5,
         ease: 'power3.out'
       }, 0.8);
 
-      // 5. 버튼 애니메이션
       gsap.set(inqBtn, { opacity: 0 });
       ScrollTrigger.create({
         trigger: inqBtn,

@@ -13,7 +13,7 @@ const Header = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
-      if (scrollY >= 500 && !hasAnimated.current) {
+      if (scrollY >= 300 && !hasAnimated.current) {
         hasAnimated.current = true;
         gsap.to(header, {
           width: '1000px',

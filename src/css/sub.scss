@@ -251,8 +251,10 @@ $wh_color: #fff;
         max-width: 1760px;
         padding: 0 20px 120px;
         margin: 0 auto;
+
         .table_Cont {
             padding-top: 40px;
+
             .tb_pc {
                 border-collapse: collapse;
                 width: 100%;
@@ -262,11 +264,13 @@ $wh_color: #fff;
                 overflow: hidden;
                 border: 1px solid #fff;
                 border-top: 0;
+
                 tr {
                     th {
                         height: 50px;
                         vertical-align: middle;
                         background: #D5E3F0;
+
                         p {
                             color: $pri_color;
                             font-size: 16px;
@@ -275,6 +279,7 @@ $wh_color: #fff;
                         }
                     }
                 }
+
                 td {
                     height: 50px;
                     vertical-align: middle;
@@ -282,7 +287,8 @@ $wh_color: #fff;
                     border-right: 1px solid #D5E3F0;
                     border-bottom: 1px solid #D5E3F0;
                     padding: 10px 20px;
-                    background:#fff;
+                    background: #fff;
+
                     p {
                         color: $pri_color;
                         font-size: 16px;
@@ -290,11 +296,13 @@ $wh_color: #fff;
                         line-height: 28px;
                     }
                 }
+
                 .compo {
                     text-align: left;
                 }
             }
         }
+
         .option_cont {
             ul {
                 padding-top: 40px;
@@ -305,6 +313,7 @@ $wh_color: #fff;
                 width: 100%;
                 max-width: 1760px;
                 margin: 0 auto;
+
                 li {
                     width: calc((100% / 6) - 20px);
                     height: 270px;
@@ -314,36 +323,42 @@ $wh_color: #fff;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+
                     p {
                         color: $pri_color;
                         font-size: 18px;
                         font-weight: 600;
                         line-height: 30px;
                     }
+
                     span {
                         color: #7D8B96;
                         font-size: 16px;
                         font-weight: 500;
                         line-height: 28px;
+
                         small {
                             display: block;
-                            padding-top:10px;
+                            padding-top: 10px;
                             color: #7D8B96;
                             font-size: 14px;
                             font-weight: 500;
                             line-height: 24px;
                         }
                     }
+
                     .f_box {
                         border-top: 1px dashed $pri_color;
                         padding-top: 9px;
                         display: flex;
                         justify-content: space-between;
+
                         p {
                             color: $pri_color;
                             font-size: 16px;
                             font-weight: 500;
                             line-height: 28px;
+
                             +p {
                                 font-size: 18px;
                                 font-weight: 600;
@@ -360,8 +375,164 @@ $wh_color: #fff;
         background: linear-gradient(180deg, #EAF2F9 0%, rgba(218, 233, 243, 0) 100%);
         padding-top: 120px;
         max-width: 100%;
-        .inq_btn{
-            margin:60px auto 0;
+
+        .inq_btn {
+            margin: 60px auto 0;
+        }
+    }
+}
+
+// sub_p002
+.sub_p003 {
+    >article {
+        padding-bottom:120px;
+        .sampleCont {
+            padding: 40px 20px 0;
+            >ul {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                max-width: 1720px;
+                gap: 80px 20px;
+                margin: 0 auto;
+
+                li {
+                    width: calc((100% / 4) - 15px);
+                    overflow: hidden;
+                    transition: all 0.2s ease-in-out;
+                    transform: scale(1);
+
+                    @media (hover: hover) and (pointer: fine) {
+                        &:hover {
+                            transform: scale(1.05);
+
+                            >div {
+                                &::after {
+                                    content: "";
+                                    opacity: 1;
+                                }
+
+                                &::before {
+                                    content: "사이트 방문";
+                                    color: #fff;
+                                    font-size: 16px;
+                                    font-weight: 500;
+                                    line-height: 26px;
+                                    position: absolute;
+                                    display: flex;
+                                    width: 130px;
+                                    height: 45px;
+                                    left: 50%;
+                                    top: 50%;
+                                    transform: translate(-50%, -50%);
+                                    z-index: 1;
+                                    border: 1px solid #fff;
+                                    border-radius: 40px;
+                                    align-items: center;
+                                    justify-content: center;
+                                    pointer-events: none;
+                                }
+                            }
+                        }
+                    }
+
+                    div {
+                        width: 100%;
+                        height: 270px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        margin-bottom: 12px;
+                        position: relative;
+
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            display: inline-block;
+                            overflow: hidden;
+
+                            iframe {
+                                width: 1920px;
+                                height: 1250px;
+                                transform-origin: top left;
+                                border: none;
+                                display: block;
+                                pointer-events: none;
+                            }
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(53, 64, 73, 0.6);
+                            border-radius: 10px;
+                            backdrop-filter: blur(5px);
+                            top: 0;
+                            left: 0;
+                            pointer-events: none;
+                            opacity: 0;
+                            transition: opacity .2s ease-in-out;
+                        }
+
+                    }
+
+                    p {
+                        color: $pri_color;
+                        font-size: 18px;
+                        font-weight: 500;
+                        line-height: 26px;
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            padding-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0 5px;
+
+            button {
+                width: 32px;
+                height: 32px;
+                border-radius: 20px;
+                background: #D5E3F0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #7D8B96;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 26px;
+                cursor: pointer;
+
+                &.active {
+                    color: $wh_color;
+                    background: $pri_color;
+                }
+            }
+
+            .numBox {
+                display: flex;
+                flex-direction: row;
+                gap: 0 8px;
+                margin: 0 15px;
+                align-items: center;
+                .dots{
+                    color: $pri_color;
+                    font-size: 16px;
+                    
+                }
+            }
+
+            .mBtn {
+                img {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
         }
     }
 }
