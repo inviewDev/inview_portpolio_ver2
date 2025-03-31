@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive';
 import { useEffect, useRef, useState } from 'react';
 import portData from '../dataBox/portData.json';
 
@@ -5,6 +6,9 @@ const MainBlock05 = () => {
     const iframeRef = useRef(null);
     const [scale, setScale] = useState(1);
     const [visibleCount, setVisibleCount] = useState(12);
+    const isPC = useMediaQuery({ query: '(min-width: 1025px)' });
+    const isTa = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' });
+    const isMo = useMediaQuery({ query: '(max-width: 768px)' });
 
     const handleResize = () => {
         if (iframeRef.current) {
@@ -25,7 +29,16 @@ const MainBlock05 = () => {
     }, []);
 
     const loadMore = () => {
-        setVisibleCount(prevCount => prevCount + 4);
+        setVisibleCount((prev) => {
+            if (isPC) {
+                return prev + 4;
+            } else if (isTa) {
+                return prev + 3;
+            } else if (isMo) {
+                return prev + 2; 
+            }
+            return prev;
+        });
     };
 
     return (

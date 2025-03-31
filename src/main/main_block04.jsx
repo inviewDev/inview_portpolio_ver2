@@ -65,7 +65,7 @@ const MainBlock04 = () => {
     return (
         <section ref={sectionRef} className='main_block04'>
             <article>
-            <h1 ref={h1Ref}>어디서도 볼 수 없는 저렴한 비용</h1>
+            <h1 ref={h1Ref}>무상으로 제공하는 최상의 서비스</h1>
                 <div className="cont_box">
                     <ul ref={listRef}>
                         {contData.map((item, index) => (

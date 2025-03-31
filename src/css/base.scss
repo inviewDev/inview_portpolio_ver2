@@ -232,6 +232,7 @@ a {
 // header
 #header {
   width: 100%;
+  max-width:100%;
   position: fixed;
   z-index: 999;
   left: 50%;
@@ -239,6 +240,69 @@ a {
   padding:10px 20px;
   top:0;
   .pc_nav_wrap {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 20px;
+
+    .logo_wrap {
+      width: 100%;
+      max-width: 255px;
+
+      a {
+        display: flex;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    nav {
+      width: 100%;
+      min-width: 700px;
+      ul {
+        display: flex;
+        gap: 0 40px;
+        align-items: center;
+        justify-content: flex-end;
+        li {
+          width: max-content;
+          a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+          }
+
+          &.inq_btn {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            max-width: 160px;
+            background: linear-gradient(-45deg, #E6296F, #509BFD);
+            background-size: 600%;
+            animation: anime 5s linear infinite;
+            box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.40) inset;
+            border-radius: 25px;
+            border: 1px rgba(231.63, 214.25, 229.79, 0.40) solid;
+            a {
+              display: inline-block;
+              height: 100%;
+              line-height: 50px;
+              color:$wh_color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mo_nav_wrap {
     width: 100%;
     max-width: 1720px;
     margin: 0 auto;
@@ -312,6 +376,7 @@ a {
     display: flex;
     align-items: center;
     flex-direction: row;
+    width: calc(100% - 40px);
     nav{
       ul{
         li{
@@ -324,6 +389,11 @@ a {
         display: none;
       }
     }
+    .ham_btn{
+      img:nth-child(1) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -332,6 +402,11 @@ a {
   #header {
     .logo_wrap {
       a:nth-child(2) {
+        display: none;
+      }
+    }
+    .ham_btn{
+      img:nth-child(2) {
         display: none;
       }
     }
@@ -445,9 +520,11 @@ a {
     nav {
       min-width:initial;
       ul {
-        gap:0 30px;
+        gap:0 20px;
         li {
-          a {font-size:14px;}
+          a {
+            text-align: center;
+            font-size:14px;}
           &.inq_btn {
             max-width:120px;
             height:45px;
@@ -478,8 +555,119 @@ a {
 // main header
 .main {
   #header {
+    background: rgb(51 51 51 / 50%);
     .logo_wrap {
       a:nth-child(2) {}
+    }
+  }
+}
+#footer {
+  padding:30px 20px;
+  ul {
+    li.f_t {
+      strong {
+        font-size: 14px;
+        line-height: 24px;}
+    }
+  
+    li.f_m {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 15px;
+      span {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+        &::after {content:none;}
+        &:last-child::after {content:none;}
+      }
+    }
+  
+    li.f_b {
+      p {font-size: 14px;
+        line-height: 24px;}
+    }
+  }
+}
+
+}
+
+@media screen and (max-width:768px) {
+// header
+.sub{
+  #header {
+  .mo_nav_wrap {
+    .ham_btn{
+      button{
+        color: $pri_color;
+      }
+    }}
+    nav{
+      background: #f9f9f9;
+    }
+  }
+}
+
+#header {
+  .mo_nav_wrap {
+    position: relative;
+    min-width:initial;
+    .logo_wrap {
+      max-width:160px;
+      a {
+        max-width:160px;
+        img {}
+      }
+    }
+    .ham_btn{
+      button{
+        background: none;
+        display: flex;
+        color: #fff;
+        align-items: center;
+        gap: 0 4px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 26px;
+        img{width:20px; height:14px;}
+      }
+    }
+    nav {
+      opacity:0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      &.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      position: absolute;
+      min-width: initial;
+      background: #fff;
+      width: 100%;
+      max-width: 200px;
+      right: 10px;
+      border-radius: 10px 0 10px 10px;
+      top: 30px;
+      box-shadow: 5px 5px 5px rgb(79 79 79 / 9%);
+      ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        li {
+          a {
+            color: $pri_color;
+            text-align: center;
+            font-size:14px;}
+          &.inq_btn {
+            max-width:120px;
+            height:45px;
+            a {line-height:45px;}
+          }
+        }
+      }
     }
   }
 }

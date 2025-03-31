@@ -26,7 +26,7 @@ const MainBlock01 = () => {
       const firstLine = '저렴한 비용의 고퀄리티 홈페이지,';
       const secondLine = '아이엔뷰에선 가능합니다.';
       main01_h1.innerHTML = `${createLetterSpans(firstLine)}<br/>${createLetterSpans(secondLine)}`;
-
+      
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,
