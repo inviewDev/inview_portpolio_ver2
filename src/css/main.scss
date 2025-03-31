@@ -1086,7 +1086,8 @@ $wh_color: #fff;
   .bg_box {
     .blur_box {}
     .bg_img {
-      img {}
+      height: 100%;
+      img {height:100%; object-fit:cover;}
     }
   }
 }

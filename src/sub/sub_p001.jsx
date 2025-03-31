@@ -25,7 +25,7 @@ const slideData = [
     { image: icon_img01, text: '홈페이지를 만드려는데 예산이 많지 않아요. <br/>저렴하게 제작할 수 있을까요?' },
     { image: icon_img02, text: '급하게 홈페이지를 만들어야하는데 최대한 <br/>빨리 만들어주실 수 있나요?ㅠㅠ' },
     { image: icon_img03, text: '모바일 버전이 없어서 반응형 홈페이지를 <br/>만들고 싶어요.' },
-    { image: icon_img04, text: '홈페이지를 만든지 오래돼서 유지보수가 너무 <br/>힘들어요!' },
+    { image: icon_img04, text: '홈페이지를 만든지 오래돼서 유지보수가 너무 <br class="only_pc" />힘들어요!' },
     { image: icon_img05, text: '새로운 기능들을 넣은 트렌디한 홈페이지를 <br/>제작하고 싶어요.' },
 ];
 
@@ -64,7 +64,7 @@ const ServiceIntroduction = () => {
                             spaceBetween={0}
                             slidesPerView={'auto'}
                             autoplay={{
-                                delay: 1500,
+                                delay:2500,
                                 disableOnInteraction: false,
                             }}
                             loop={true}

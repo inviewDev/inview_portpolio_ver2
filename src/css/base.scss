@@ -376,7 +376,7 @@ a {
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: calc(100% - 40px);
+    width:100%;
     nav{
       ul{
         li{
@@ -506,6 +506,7 @@ a {
 
 /* responsive */
 @media screen and (max-width: 1024px) {
+.only_pc{display:none;}
 // header
 #header {
   .pc_nav_wrap {
