@@ -14,16 +14,6 @@ import Sample from './sub/sub_p004.jsx';
 import Portfolio from './sub/sub_p005.jsx';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    const scrollTarget = document.documentElement || document.body;
-    scrollTarget.scrollTo(0, 0);
-    ScrollTrigger.refresh();
-  }, [pathname]);
-  return null;
-};
-
 const routes = [
   { path: "/", name: "Home", Component: Home },
   { path: "/ServiceIntroduction", name: "Service Introduction", Component: ServiceIntroduction },
@@ -75,7 +65,6 @@ function App() {
 
 const AppWrapper = () => (
   <Router>
-    <ScrollToTop />
     <App />
   </Router>
 );

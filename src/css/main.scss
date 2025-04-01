@@ -58,7 +58,7 @@ $wh_color: #fff;
   top: 0;
 
   article {
-    position: relative;
+    position: absolute;
     width: 100%;
     top: 50%;
     left: 50%;
@@ -102,7 +102,7 @@ $wh_color: #fff;
     left: 50%;
     transform: translateX(-50%);
     display: block;
-    z-index: -1;
+    z-index:0;
     max-width: 600px;
   }
 
@@ -145,7 +145,6 @@ $wh_color: #fff;
   height: auto;
   position: relative;
   overflow: hidden;
-  margin-top: 2000px;
 
   article {
     display: flex;
@@ -650,27 +649,58 @@ $wh_color: #fff;
             }
           }
         }
-        > div {
+        .iframe_wrapper {
+          position: relative;
           width: 100%;
           height: 270px;
           border-radius: 10px;
           overflow: hidden;
           margin-bottom: 12px;
-          position:relative;
           a {
             width: 100%;
             height: 100%;
-            display: inline-block;
+            display: block;
             overflow: hidden;
           }
           iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 1920px;
-            height: 300vh;
+            height: 1080px;
             transform-origin: top left;
             border: none;
             display: block;
             pointer-events: none;
           }
+
+          .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $wh_color;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+
+            &::after {
+              content: '';
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              border: 2px solid $wh_color;
+              border-radius: 50%;
+              border-top-color: transparent;
+              animation: spin 1s linear infinite;
+              margin-left: 8px;
+            }
+          }
+
           &::after {
             content: "";
             position: absolute;
@@ -1156,22 +1186,6 @@ $wh_color: #fff;
 .main_block01 {
   article {
     h1 {
-      max-width: 300px;
-      span.letter:nth-child(1){
-        margin-left:20px;
-      }
-      span.letter:nth-child(8) {
-        margin-right:20px;
-      }
-      span.letter:nth-child(18) {
-        display:none !important;
-      }
-      span.letter:nth-child(20) {
-        margin-left:30px;
-      }
-      span.letter:nth-child(26) {
-        margin-left:42px;
-      }
     }
     p {}
   }

@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
+import { useMediaQuery } from 'react-responsive';
+import gsap from 'gsap';
 import main_top_img from '../assets/main_top_img.webp';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 const MainBlock01 = () => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   useEffect(() => {
     const section = document.querySelector('.main_block01');
     const main01_h1 = section?.querySelector('h1');
@@ -18,102 +21,79 @@ const MainBlock01 = () => {
     if (section && main01_h1 && main01_img && main01_dimme && inqBtn) {
       const createLetterSpans = (line) => {
         return line.split('').map((char) => {
-          const randomY = Math.random() * (200 - 10) + 10;
+          if (char === ' ') return char;
+          const randomY = Math.random() * (isMobile ? 50 - 5 : 200 - 10) + (isMobile ? 5 : 10);
           return `<span class="letter" style="display: inline-block; opacity: 0; transform: translateY(-${randomY}px);">${char}</span>`;
         }).join('');
       };
 
-      const firstLine = '저렴한 비용의 고퀄리티 홈페이지,';
-      const secondLine = '아이엔뷰에선 가능합니다.';
-      main01_h1.innerHTML = `${createLetterSpans(firstLine)}<br/>${createLetterSpans(secondLine)}`;
-      
-      const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: '+=2000',
-          scrub: true,
-          pin: true,
-          pinSpacing: false
-        }
-      });
-
-      const letters = main01_h1.querySelectorAll('.letter');
-      letters.forEach((letter, index) => {
-        timeline.to(letter, {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          delay: index * 0.1
-        }, index < firstLine.length ? 0 : 1.5);
-      });
-
-      gsap.set([main01_img],{
-        xPercent: -50,
-      })
-      gsap.set([main01_img, main01_dimme], { 
-        opacity: 0, 
-        y: -100 
-      });
-
-      timeline.to(main01_dimme, {
-        opacity: 1,
-        y: 0,
-        duration: 1
-      }, 0.5).to(main01_img, {
-        opacity: 1,
-        xxPercent: -50,
-        y: 0,
-        duration: 1.5,
-        ease: 'power3.out'
-      }, 0.8);
-
-      gsap.set(inqBtn, { opacity: 0 });
-      ScrollTrigger.create({
-        trigger: inqBtn,
-        start: '600',
-        onEnter: () => {
-          gsap.to(inqBtn, {
-            opacity: 1,
-            duration: 1,
-            ease: 'back.out(1.7)'
-          });
-        }
-      });
-
-      if (scrollIndicator) {
-        const indicatorTl = gsap.timeline({ 
-          delay: 2 
-        });
-        indicatorTl
-          .to(scrollIndicator, { 
-            opacity: 1, 
-            duration: 1.5 
-          })
-          .to(scrollIndicator, { 
-            y: -10, 
-            repeat: -1, 
-            yoyo: true, 
-            duration: 1
-          }, 0);
-
-        ScrollTrigger.create({
-          trigger: section,
-          start: 'top top',
-          end: '+=100',
-          onEnter: () => gsap.to(scrollIndicator, { 
-            duration: 0.8 
-          }),
-        });
+      let lines;
+      if (isMobile) {
+        lines = ['저렴한 비용의', ' 고퀄리티 홈페이지,', '아이엔뷰에선', '가능합니다.'];
+      } else {
+        lines = ['저렴한 비용의 고퀄리티 홈페이지,', '아이엔뷰에선 가능합니다.'];
       }
 
+      main01_h1.innerHTML = lines.map(line => createLetterSpans(line)).join('<br/>');
+
+      // 초기 상태 설정
+      const letters = main01_h1.querySelectorAll('.letter');
+      gsap.set(letters, { opacity: 0 }); // 초기 투명 상태
+      gsap.set(main01_img, { xPercent: -50, opacity: 0, y: -100 });
+      gsap.set(main01_dimme, { opacity: 0, y: -100 });
+      gsap.set(inqBtn, { opacity: 0 });
+      if (scrollIndicator) gsap.set(scrollIndicator, { opacity: 0 });
+
+      // 섹션에 도달하면 한 번에 나타나게
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 20%', // 섹션이 뷰포트 상단에서 20% 지점에 도달하면 실행
+        onEnter: () => {
+          // 텍스트 애니메이션
+          gsap.to(letters, {
+            opacity: 1,
+            y: 0,
+            delay: 0.5,
+            duration: isMobile ? 0.5 : 0.8, // 모바일에서 조금 빠르게
+            ease: 'power2.out'
+          });
+
+          // dimmed_Box 애니메이션
+          gsap.to(main01_dimme, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power2.out'
+          });
+
+          // 이미지 애니메이션
+          gsap.to(main01_img, {
+            opacity: 1,
+            y: 0,
+            duration: 1.5,
+            ease: 'power3.out'
+          });
+
+          // 문의 버튼 애니메이션
+          gsap.to(inqBtn, { opacity: 1, duration: 1, delay: 0.8, ease: 'back.out(1.7)' });
+
+          // 스크롤 유도 텍스트 애니메이션
+          if (scrollIndicator) {
+            const indicatorTl = gsap.timeline();
+            indicatorTl.to(scrollIndicator, { opacity: 1, duration: 1.5 })
+                      .to(scrollIndicator, { y: -10, repeat: -1, yoyo: true, duration: 1 }, 0);
+          }
+        },
+        markers: false // 디버깅용 markers 제거 (필요하면 true로)
+      });
+
+      // 클린업
       return () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
-        timeline.kill();
-        if (scrollIndicator) gsap.killTweensOf(scrollIndicator);
+        gsap.killTweensOf([letters, main01_img, main01_dimme, inqBtn, scrollIndicator]);
       };
     }
-  }, []);
+  }, [isMobile]);
 
   return (
     <section className="main_block01">
@@ -127,8 +107,6 @@ const MainBlock01 = () => {
       </article>
       <div className="dimmed_Box"></div>
       <img src={main_top_img} alt="메인 이미지" style={{ display: 'block' }} />
-      
-      {/* 스크롤 유도 텍스트 추가 */}
       <div className="scroll_indi">
         <span>Scroll</span>
       </div>
