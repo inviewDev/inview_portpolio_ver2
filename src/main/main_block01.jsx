@@ -38,27 +38,24 @@ const MainBlock01 = () => {
 
       // 초기 상태 설정
       const letters = main01_h1.querySelectorAll('.letter');
-      gsap.set(letters, { opacity: 0 }); // 초기 투명 상태
+      gsap.set(letters, { opacity: 0 });
       gsap.set(main01_img, { xPercent: -50, opacity: 0, y: -100 });
       gsap.set(main01_dimme, { opacity: 0, y: -100 });
       gsap.set(inqBtn, { opacity: 0 });
       if (scrollIndicator) gsap.set(scrollIndicator, { opacity: 0 });
 
-      // 섹션에 도달하면 한 번에 나타나게
       ScrollTrigger.create({
         trigger: section,
-        start: 'top 20%', // 섹션이 뷰포트 상단에서 20% 지점에 도달하면 실행
+        start: 'top 20%',
         onEnter: () => {
-          // 텍스트 애니메이션
           gsap.to(letters, {
             opacity: 1,
             y: 0,
             delay: 0.5,
-            duration: isMobile ? 0.5 : 0.8, // 모바일에서 조금 빠르게
+            duration: isMobile ? 0.5 : 0.8,
             ease: 'power2.out'
           });
 
-          // dimmed_Box 애니메이션
           gsap.to(main01_dimme, {
             opacity: 1,
             y: 0,
@@ -66,7 +63,6 @@ const MainBlock01 = () => {
             ease: 'power2.out'
           });
 
-          // 이미지 애니메이션
           gsap.to(main01_img, {
             opacity: 1,
             y: 0,
@@ -74,20 +70,17 @@ const MainBlock01 = () => {
             ease: 'power3.out'
           });
 
-          // 문의 버튼 애니메이션
           gsap.to(inqBtn, { opacity: 1, duration: 1, delay: 0.8, ease: 'back.out(1.7)' });
 
-          // 스크롤 유도 텍스트 애니메이션
           if (scrollIndicator) {
             const indicatorTl = gsap.timeline();
             indicatorTl.to(scrollIndicator, { opacity: 1, duration: 1.5 })
                       .to(scrollIndicator, { y: -10, repeat: -1, yoyo: true, duration: 1 }, 0);
           }
         },
-        markers: false // 디버깅용 markers 제거 (필요하면 true로)
+        markers: false 
       });
 
-      // 클린업
       return () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
         gsap.killTweensOf([letters, main01_img, main01_dimme, inqBtn, scrollIndicator]);
