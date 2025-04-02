@@ -29,12 +29,10 @@ const MainBlock06 = () => {
 
     const debouncedResize = useMemo(() => debounce(handleResize, 100), [handleResize]);
 
-    // 초기 로드 및 리사이즈 이벤트
     useEffect(() => {
         const timer = setTimeout(() => {
             handleResize();
         }, 0);
-
         window.addEventListener('resize', debouncedResize);
         return () => {
             clearTimeout(timer);
@@ -43,10 +41,10 @@ const MainBlock06 = () => {
     }, [debouncedResize, handleResize]);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const handle = requestAnimationFrame(() => {
             handleResize();
-        }, 100);
-        return () => clearTimeout(timer);
+        });
+        return () => cancelAnimationFrame(handle);
     }, [visibleCount, handleResize]);
 
     useEffect(() => {
@@ -85,6 +83,17 @@ const MainBlock06 = () => {
         return `/proxy-iframe.html?url=${encodeURIComponent(originalUrl)}`;
     };
 
+    if (!portData.length) {
+        return (
+            <section className="main_block06">
+                <article>
+                    <h1>포트폴리오</h1>
+                    <div>포트폴리오 데이터가 없습니다.</div>
+                </article>
+            </section>
+        );
+    }
+
     return (
         <section className="main_block06">
             <article>
@@ -104,8 +113,10 @@ const MainBlock06 = () => {
                                                 transform: `scale(${scales[index] || 1})`,
                                                 transformOrigin: '0 0',
                                                 display: loadedUrls[index] ? 'block' : 'none',
+                                                width: '1920px',
                                             }}
                                             title={item.descript}
+                                            onError={() => console.log(`Failed to load iframe ${index}`)}
                                         />
                                     </a>
                                 </div>
