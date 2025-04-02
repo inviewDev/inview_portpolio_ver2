@@ -10,7 +10,6 @@ const MainBlock06 = () => {
     const isTa = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' });
     const isMo = useMediaQuery({ query: '(max-width: 768px)' });
 
-    // 디바운싱 함수
     const debounce = (func, wait) => {
         let timeout;
         return (...args) => {
@@ -19,7 +18,6 @@ const MainBlock06 = () => {
         };
     };
 
-    // 리사이즈 핸들러
     const handleResize = useCallback(() => {
         const iframes = document.querySelectorAll('.iframe_wrapper iframe');
         const newScales = Array.from(iframes).map((iframe) => {
@@ -31,7 +29,7 @@ const MainBlock06 = () => {
 
     const debouncedResize = useMemo(() => debounce(handleResize, 100), [handleResize]);
 
-    // 초기 리사이즈 및 리사이즈 이벤트 리스너
+    // 초기 로드 및 리사이즈 이벤트
     useEffect(() => {
         const timer = setTimeout(() => {
             handleResize();
@@ -44,7 +42,13 @@ const MainBlock06 = () => {
         };
     }, [debouncedResize, handleResize]);
 
-    // Intersection Observer로 지연 로딩
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            handleResize();
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [visibleCount, handleResize]);
+
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -68,7 +72,6 @@ const MainBlock06 = () => {
         return () => observer.disconnect();
     }, [visibleCount]);
 
-    // 더보기 버튼 핸들러
     const loadMore = () => {
         setVisibleCount((prev) => {
             if (isPC) return prev + 4;
@@ -78,7 +81,6 @@ const MainBlock06 = () => {
         });
     };
 
-    // 프록시 URL 생성
     const getProxyUrl = (originalUrl) => {
         return `/proxy-iframe.html?url=${encodeURIComponent(originalUrl)}`;
     };
