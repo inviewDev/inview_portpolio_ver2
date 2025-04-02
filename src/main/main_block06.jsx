@@ -1,14 +1,11 @@
 import { useMediaQuery } from 'react-responsive';
-import { useEffect, useRef, useState } from 'react';
-import React from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import portData from '../dataBox/portData.json';
 
-const MainBlock05 = () => {
-    const iframeRefs = useRef([]);
+const MainBlock06 = () => {
     const [scales, setScales] = useState([]);
     const [visibleCount, setVisibleCount] = useState(12);
     const [loadedUrls, setLoadedUrls] = useState({});
-    const [isLoading, setIsLoading] = useState({});
     const isPC = useMediaQuery({ query: '(min-width: 1025px)' });
     const isTa = useMediaQuery({ query: '(min-width: 769px) and (max-width: 1024px)' });
     const isMo = useMediaQuery({ query: '(max-width: 768px)' });
@@ -22,60 +19,19 @@ const MainBlock05 = () => {
         };
     };
 
-    const handleResize = () => {
-        const newScales = new Array(visibleCount).fill(1); // visibleCount 크기로 초기화
-        for (let i = 0; i < visibleCount; i++) {
-            const ref = iframeRefs.current[i];
-            if (ref.current) {
-                const parentWidth = ref.current.parentElement.offsetWidth;
-                const targetWidth = 1920;
-                newScales[i] = parentWidth / targetWidth;
-            }
-        }
-        setScales(newScales);
-    };
-
-    const debouncedResize = debounce(handleResize, 100);
-
-    // iframeRefs와 scales 초기화 및 동적 확장
-    useEffect(() => {
-        // visibleCount에 맞게 iframeRefs와 scales 확장
-        const newRefs = [...iframeRefs.current];
-        for (let i = newRefs.length; i < visibleCount; i++) {
-            newRefs[i] = React.createRef();
-        }
-        iframeRefs.current = newRefs;
-
-        // DOM 렌더링 후 handleResize 호출
-        const timer = setTimeout(() => {
-            handleResize();
-        }, 100); // DOM 렌더링 후 호출 보장
-
-        return () => clearTimeout(timer);
-    }, [visibleCount]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const index = entry.target.dataset.index;
-                        setLoadedUrls((prev) => ({ ...prev, [index]: true }));
-                        setIsLoading((prev) => ({ ...prev, [index]: true }));
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
-
-        document.querySelectorAll('.portCont li').forEach((li) => {
-            observer.observe(li);
+    // 리사이즈 핸들러
+    const handleResize = useCallback(() => {
+        const iframes = document.querySelectorAll('.iframe_wrapper iframe');
+        const newScales = Array.from(iframes).map((iframe) => {
+            const parentWidth = iframe.parentElement.offsetWidth;
+            return parentWidth / 1920;
         });
+        setScales(newScales);
+    }, []);
 
-        return () => observer.disconnect();
-    }, [visibleCount]);
+    const debouncedResize = useMemo(() => debounce(handleResize, 100), [handleResize]);
 
+    // 초기 리사이즈 및 리사이즈 이벤트 리스너
     useEffect(() => {
         const timer = setTimeout(() => {
             handleResize();
@@ -86,36 +42,61 @@ const MainBlock05 = () => {
             clearTimeout(timer);
             window.removeEventListener('resize', debouncedResize);
         };
-    }, []);
+    }, [debouncedResize, handleResize]);
 
+    // Intersection Observer로 지연 로딩
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const index = entry.target.dataset.index;
+                        setLoadedUrls((prev) => ({ ...prev, [index]: true }));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const newItems = document.querySelectorAll('.portCont li:not([data-observed])');
+        newItems.forEach((li) => {
+            li.dataset.observed = 'true';
+            observer.observe(li);
+        });
+
+        return () => observer.disconnect();
+    }, [visibleCount]);
+
+    // 더보기 버튼 핸들러
     const loadMore = () => {
         setVisibleCount((prev) => {
             if (isPC) return prev + 4;
             if (isTa) return prev + 3;
             if (isMo) return prev + 2;
-            return prev; // 기본값
+            return prev;
         });
     };
 
+    // 프록시 URL 생성
     const getProxyUrl = (originalUrl) => {
         return `/proxy-iframe.html?url=${encodeURIComponent(originalUrl)}`;
     };
 
     return (
-        <section className='main_block06'>
+        <section className="main_block06">
             <article>
                 <h1>포트폴리오</h1>
-                <div className='portCont'>
+                <div className="portCont">
                     <ul>
                         {portData.slice(0, visibleCount).map((item, index) => (
                             <li key={index} data-index={index}>
                                 <div className="iframe_wrapper">
-                                    {isLoading[index] && !loadedUrls[index] && (
+                                    {!loadedUrls[index] && (
                                         <div className="loading">로딩 중...</div>
                                     )}
-                                    <a href={item.url} target='_blank' rel="noreferrer">
+                                    <a href={item.url} target="_blank" rel="noreferrer">
                                         <iframe
-                                            ref={iframeRefs.current[index]}
                                             src={loadedUrls[index] ? getProxyUrl(item.url) : ''}
                                             style={{
                                                 transform: `scale(${scales[index] || 1})`,
@@ -123,13 +104,10 @@ const MainBlock05 = () => {
                                                 display: loadedUrls[index] ? 'block' : 'none',
                                             }}
                                             title={item.descript}
-                                            onLoad={() =>
-                                                setIsLoading((prev) => ({ ...prev, [index]: false }))
-                                            }
                                         />
                                     </a>
                                 </div>
-                                <p className='name'>{item.name}</p>
+                                <p className="name">{item.name}</p>
                             </li>
                         ))}
                     </ul>
@@ -137,7 +115,7 @@ const MainBlock05 = () => {
                 {visibleCount < portData.length && (
                     <button
                         onClick={loadMore}
-                        className='loadMore'
+                        className="loadMore"
                         aria-label="더 많은 포트폴리오 항목 보기"
                     >
                         더보기
@@ -148,4 +126,4 @@ const MainBlock05 = () => {
     );
 };
 
-export default MainBlock05;
+export default MainBlock06;
