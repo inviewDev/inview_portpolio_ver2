@@ -1132,7 +1132,7 @@ $wh_color: #fff;
       li {
         width:100%;
         max-width: calc((100% / 3) - 15px);
-        > div {
+        .iframe_wrapper {
           height:200px;
           a {}
           iframe {}
@@ -1330,7 +1330,8 @@ $wh_color: #fff;
       align-items: center;
       li {
         max-width:480px;
-        > div {
+        .iframe_wrapper {
+          height:200px;
           a {}
           iframe {}
 
