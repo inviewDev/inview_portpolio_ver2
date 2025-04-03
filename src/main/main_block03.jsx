@@ -25,19 +25,12 @@ const MainBlock03 = () => {
     if (!h1Element) return;
 
     const split = new SplitType(h1Element);
-
     const parLis = gsap.utils.toArray('.main_block03 li.par_li', section);
-    const totalScroll = parLis.reduce((acc, li) => acc + li.offsetHeight + 50, 0);
 
     try {
       ScrollTrigger.create({
         trigger: section,
-        start: "top top",
-        end: `+=${totalScroll}`,
-        pin: true,
-        pinSpacing: true,
-        scrub: 0.5,
-        markers: false,
+        start: 'top 30%',
         toggleActions: 'play none none reset',
         onEnter: () => {
           gsap.to(split.chars, {
@@ -47,27 +40,19 @@ const MainBlock03 = () => {
             stagger: 0.1,
             ease: "power2.out"
           });
-          gsap.set(split.chars, { opacity: 1, y: 20 });
-        },
-        onUpdate: self => {
-          const progress = self.progress;
-
-          parLis.forEach((li, index) => {
-            const liProgress = gsap.utils.clamp(0, 1,
-              (progress - index * 0.2) * 3
-            );
-
-            if(liProgress > 0 && liProgress < 1) {
-              gsap.to(li, {
-                opacity: liProgress,
-                y: 100 - (100 * liProgress),
-                scale: 0.8 + (0.2 * liProgress),
-                ease: "power2.out"
-              });
-            }
+          gsap.to(parLis, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.5,
+            stagger: 0.2,
+            ease: "power2.out"
           });
         }
       });
+      gsap.set(split.chars, { opacity: 0, y: 20 });
+      gsap.set(parLis, { opacity: 0, y: 100, scale: 0.8 });
+
     } catch (error) {
       console.error('Error occurred:', error);
     }
