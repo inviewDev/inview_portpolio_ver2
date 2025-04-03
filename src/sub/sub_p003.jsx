@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import SubP00102 from './sub_p002_02.jsx';
 import AOS from "aos";
 
 const tableData = {
@@ -43,7 +44,7 @@ const optionData = [
     },
     {
         title: '갤러리(포토)게시판 추가',
-        description: '이미지형 게시판 (썸네일 이미지, 제목, 작성일, 조회수 , 내용, 첨부파일) <small>※ 게시판 2개 운영 시 유효기간은 3년이며 이후 추가 비용 발생</small>',
+        description: '이미지형 게시판 (썸네일 이미지, 제목, 작성일, 조회수, 내용, 첨부파일) <small>※ 게시판 2개 운영 시 유효기간은 3년이며 이후 추가 비용 발생</small>',
         unit: '1 개',
         price: '50,000',
         aos_d: "100"
@@ -134,6 +135,7 @@ const Ecommerce = () => {
                 <div className="sub_tit" data-aos="fade-down">
                     <sub>쇼핑몰 디자인</sub>
                 </div>
+                <SubP00102></SubP00102>
                 <div className="table_Cont">
                     {isPC && (
                         <table className='tb_pc' data-aos="fade-down" data-aos-delay="300">

@@ -157,13 +157,14 @@ $wh_color: #fff;
         font-size: 40px;
         font-weight: 600;
         line-height: 60px;
+        letter-spacing: -0.01em;
       }
-
       p {
         color: $wh_color;
         font-size: 20px;
         font-weight: 500;
         line-height: 32px;
+        letter-spacing: -0.01em;
       }
     }
 
@@ -217,8 +218,7 @@ $wh_color: #fff;
 // main_block03
 .main_block03 {
   background: #eaf2f9;
-  padding: 120px 20px;
-  height: 100vh;
+  padding: 120px 20px 20px;
   position: relative;
 
   h1 {
@@ -477,15 +477,10 @@ $wh_color: #fff;
 .main_block04 {
   background: #eaf2f9;
   padding: 120px 20px;
-  height: 100vh;
+  height: auto;
   position: relative;
-
   article {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0 20px;
+
   }
 
   .cont_box {
@@ -495,7 +490,7 @@ $wh_color: #fff;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 40px 20px;
+      gap: 20px;
 
       li {
         width: 100%;

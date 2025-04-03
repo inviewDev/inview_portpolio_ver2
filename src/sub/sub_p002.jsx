@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import SubP00102 from './sub_p002_01.jsx';
 import AOS from "aos";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const tableData = {
     구분: ['실버', '골드', '플래티넘'],
@@ -44,7 +48,7 @@ const optionData = [
     },
     {
         title: '갤러리(포토)게시판 추가',
-        description: '이미지형 게시판 (썸네일 이미지, 제목, 작성일, 조회수 , 내용, 첨부파일) <small>※ 게시판 2개 운영 시 유효기간은 3년이며 이후 추가 비용 발생</small>',
+        description: '이미지형 게시판 (썸네일 이미지, 제목, 작성일, 조회수, 내용, 첨부파일) <small>※ 게시판 2개 운영 시 유효기간은 3년이며 이후 추가 비용 발생</small>',
         unit: '1 개',
         price: '50,000',
         aos_d: "100"
@@ -127,13 +131,43 @@ const WebsiteDesign = () => {
     const isMo = useMediaQuery({ query: '(max-width: 768px)' });
     useEffect(() => {
         AOS.init();
-    }, [])
+        const paragraphs = gsap.utils.toArray(".sc_wordBox p");
+        gsap.to(paragraphs[0], {
+            x: "-70%",
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: ".sc_wordBox",
+                start: "top 80%",
+                end: "bottom top",
+                scrub: 1,
+                markers: false,
+            },
+        });
+
+        gsap.set(paragraphs[1], { x: "-70%" });
+        gsap.to(paragraphs[1], {
+            x: "0%",
+            ease: "power1.out", 
+            scrollTrigger: {
+                trigger: ".sc_wordBox",
+                start: "top 80%",
+                end: "bottom top",
+                scrub: 1,
+                markers: false,
+            },
+        });
+    }, []);
 
     return (
         <section className='sub_p002'>
             <article>
                 <div className="sub_tit" data-aos="fade-down">
                     <sub>홈페이지 디자인</sub>
+                </div>
+                <SubP00102></SubP00102>
+                <div className='sc_wordBox' data-aos="fade-up" data-aos-delay="500">
+                    <p>izing customer satisfaction with profound expertise and know-how Maximizing customer satisfaction with profound expertise and know-how</p>
+                    <p>Maximizing customer satisfaction with profound expertise and know-how Maximizing customer satisfaction with profound expertise and know-how</p>
                 </div>
                 <div className="table_Cont">
                     {isPC && (
