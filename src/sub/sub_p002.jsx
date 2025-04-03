@@ -317,7 +317,7 @@ const WebsiteDesign = () => {
                 <div className="option_cont">
                     <ul>
                         {optionData.map((item, index) => (
-                            <li key={index} data-aos="fade-down">
+                            <li key={index} data-aos="flip-right" data-aos-delay={item.aos_d * (index + 1.5)}>
                                 <div className="t_box">
                                     <p >{item.title}</p>
                                     <span dangerouslySetInnerHTML={{ __html: item.description }} />

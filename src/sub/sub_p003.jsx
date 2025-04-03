@@ -317,7 +317,7 @@ const Ecommerce = () => {
                 <div className="option_cont">
                     <ul style={{ listStyleType: "none", paddingLeft: "0", marginTop: "20px" }}>
                         {optionData.map((item, index) => (
-                            <li key={index} data-aos="fade-down">
+                            <li key={index} data-aos="flip-left" data-aos-delay={item.aos_d * (index + 1.5)}>
                                 <div className="t_box">
                                     <p >{item.title}</p>
                                     <span dangerouslySetInnerHTML={{ __html: item.description }} />
