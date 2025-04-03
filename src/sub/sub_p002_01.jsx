@@ -81,7 +81,7 @@ const SubP00102 = () => {
           </div>
         )}
         {isMobile && (
-          <div className="mo_view">
+          <div className="mo_view" data-aos="fade-down" data-aos-delay="300">
             <Swiper 
               modules={[Pagination, A11y]}
               spaceBetween={20}

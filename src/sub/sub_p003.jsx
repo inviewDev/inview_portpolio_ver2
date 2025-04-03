@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import SubP00102 from './sub_p002_02.jsx';
 import AOS from "aos";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const tableData = {
     구분: ['골드', '플래티넘', '다이아몬드'],
@@ -127,7 +130,32 @@ const Ecommerce = () => {
     const isMo = useMediaQuery({ query: '(max-width: 768px)' });
     useEffect(() => {
         AOS.init();
-    }, [])
+        const paragraphs = gsap.utils.toArray(".sc_wordBox p");
+        gsap.to(paragraphs[0], {
+            x: "-70%",
+            ease: "power1.out",
+            scrollTrigger: {
+                trigger: ".sc_wordBox",
+                start: "top 80%",
+                end: "bottom top",
+                scrub: 1,
+                markers: false,
+            },
+        });
+
+        gsap.set(paragraphs[1], { x: "-70%" });
+        gsap.to(paragraphs[1], {
+            x: "0%",
+            ease: "power1.out", 
+            scrollTrigger: {
+                trigger: ".sc_wordBox",
+                start: "top 80%",
+                end: "bottom top",
+                scrub: 1,
+                markers: false,
+            },
+        });
+    }, []);
 
     return (
         <section className='sub_p002'>
@@ -136,6 +164,10 @@ const Ecommerce = () => {
                     <sub>쇼핑몰 디자인</sub>
                 </div>
                 <SubP00102></SubP00102>
+                <div className='sc_wordBox' data-aos="fade-up" data-aos-delay="500">
+                    <p>izing customer satisfaction with profound expertise and know-how Maximizing customer satisfaction with profound expertise and know-how</p>
+                    <p>Maximizing customer satisfaction with profound expertise and know-how Maximizing customer satisfaction with profound expertise and know-how</p>
+                </div>
                 <div className="table_Cont">
                     {isPC && (
                         <table className='tb_pc' data-aos="fade-down" data-aos-delay="300">
