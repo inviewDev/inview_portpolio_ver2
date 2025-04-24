@@ -29,9 +29,9 @@ const MainBlock01 = () => {
 
       let lines;
       if (isMobile) {
-        lines = ['저렴한 비용의', ' 고퀄리티 홈페이지,', '아이엔뷰에선', '가능합니다.'];
+        lines = ['저렴한 비용의', ' 고퀄리티 홈페이지,', '아이앤뷰에선', '가능합니다.'];
       } else {
-        lines = ['저렴한 비용의 고퀄리티 홈페이지,', '아이엔뷰에선 가능합니다.'];
+        lines = ['저렴한 비용의 고퀄리티 홈페이지,', '아이앤뷰에선 가능합니다.'];
       }
 
       main01_h1.innerHTML = lines.map(line => createLetterSpans(line)).join('<br/>');
