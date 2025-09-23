@@ -1,5 +1,29 @@
 [
   {
+    "url": "https://tngfc.cafe24.com/skin-skin1",
+    "img": "indigoPC",
+    "name": "인디고PC카페",
+    "descript": "인디고PC카페",
+  },
+  {
+    "url": "https://okto100.cafe24.com/skin-skin2",
+    "img": "okto",
+    "name": "옥토",
+    "descript": "옥토",
+  },
+  {
+    "url": "https://etcsoftmall.cafe24.com/skin-skin6",
+    "img": "etcsofte",
+    "name": "이티씨소프트",
+    "descript": "이티씨소프트",
+  },
+  {
+    "url": "https://hanam5466.cafe24.com/skin-skin1",
+    "img": "hanamobile",
+    "name": "하나모바일",
+    "descript": "하나모바일",
+  },
+  {
     "url": "https://ohs8864.cafe24.com/",
     "img": "seosansusan",
     "name": "서산수산",
