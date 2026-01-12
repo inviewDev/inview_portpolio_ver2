@@ -530,18 +530,17 @@
     "descript": "어반가든"
   },
   {
-    "url": "http://거성주방.com/",
+    "url": "http://geoseong0512.cafe24.com/",
     "img": "geosung",
     "name": "거성주방",
     "descript": "주방기구 식당이전 전문"
   },
   {
-    "url": "http://www.kooky.co.kr/",
+    "url": "http://inviewcc18444.cafe24.com/",
     "img": "kooky",
     "name": "쿠키혼레이저",
     "descript": "레이저 시스템"
   },
-
   {
     "url": "http://hyonanum.cafe24.com",
     "img": "hyonanum",
@@ -555,62 +554,16 @@
     "descript": "당구용품 쇼핑몰"
   },
   {
-    "url": "http://우성적재함.com/",
-    "img": "woosung",
-    "name": "우성적재함",
-    "descript": "용접 및 제품 제작/설치 전문 업체"
-  },
-  {
-    "url": "https://unigoodlife0215.cafe24.com/",
-    "img": "unigoodlife",
-    "name": "유니굿라이프",
-    "descript": "프린팅 마스크 제작"
-  },
-  {
     "url": "https://sl0078.co.kr/",
     "name": "에스엘",
     "descript": "일회용기 쇼핑몰"
   },
-  {
-    "url": "https://stmcell-telomere.com/",
-    "img": "aplgo",
-    "name": "에이피엘고 코리아",
-    "descript": "DNA Drops 캔디 영양제"
-  },
-  {
-    "url": "https://gunpo0207.cafe24.com/",
-    "img": "gunpo",
-    "name": "SB건설중기",
-    "descript": "중기대여 및 토목공사 전문기업"
-  },
-
   {
     "url": "https://bikita.net/",
     "img": "bikita",
     "name": "지클론테크",
     "descript": "고급 커피원두 쇼핑몰"
   },
-
-  {
-    "url": "http://noeulps.com/",
-    "img": "noeulps",
-    "name": "노을펜션",
-    "descript": "펜션 소개 홈페이지"
-  },
-  {
-    "url": "https://fenableboutique.com/",
-    "img": "fenable",
-    "name": "페나블",
-    "descript": "여성신발 쇼핑몰"
-  },
-
-  {
-    "url": "https://seolguk.kr/",
-    "img": "seolguk",
-    "name": "설국유통",
-    "descript": "얼음, 컵얼음, 음료, 얼린생수 납품 전문업체"
-  },
-
   {
     "url": "https://idealwellness.co.kr/",
     "img": "ideal",
@@ -624,41 +577,16 @@
     "descript": "FRP/SMC 물탱크 제조, 보수, 방수공사 전문"
   },
   {
-    "url": "https://withfarm.net",
-    "img": "withfarm",
-    "name": "위드팜",
-    "descript": "야생화, 아카시아, 피나무 등 청정 스틱꿀"
-  },
-  {
-    "url": "https://방방곡곡.com",
+    "url": "https://bangkoc.cafe24.com/",
     "img": "bangkoc",
     "name": "방방곡곡 엔틱 골동품",
     "descript": "유럽 엔틱가구, 엔틱소품 전문"
-  },
-  {
-    "url": "https://kalsae.co.kr/",
-    "img": "kalsae",
-    "name": "칼새빌리어드",
-    "descript": "당구용품 쇼핑몰"
-  },
-
-  {
-    "url": "https://tgreengolf.co.kr",
-    "img": "mpsolution",
-    "name": "엠피솔루션",
-    "descript": "고급 디지털 퍼터"
   },
   {
     "url": "http://waldorfmall.cafe24.com",
     "img": "mercurius",
     "name": "머큐리어스 코리아",
     "descript": "나무 놀잇감, 에포크 공책, 발도르프 악기"
-  },
-  {
-    "url": "https://jeilps.co.kr",
-    "img": "jeilpns",
-    "name": "제일피앤에스",
-    "descript": "주차시스템 솔루션"
   },
   {
     "url": "https://artem.co.kr",
@@ -677,18 +605,5 @@
     "img": "yedam",
     "name": "예담 부동산",
     "descript": "부동산 홈페이지"
-  },
-  {
-    "url": "http://daewonjeju.com/",
-    "img": "omegi",
-    "name": "대원 오메기떡",
-    "descript": "제주 전통 오메기떡"
-  },
-
-  {
-    "url": "http://okgashelium.co.kr/",
-    "img": "lsy",
-    "name": "LSY 산업가스",
-    "descript": "가스 전문"
   }
 ]
