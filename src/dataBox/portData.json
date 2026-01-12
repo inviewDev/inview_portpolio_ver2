@@ -229,12 +229,6 @@
     "descript": "고당도"
   },
   {
-    "url": "https://arose114.cafe24.com/skin-skin1",
-    "img": "didimdol",
-    "name": "한국중소기업디딤돌지원센터",
-    "descript": "한국디딤돌지원센터"
-  },
-  {
     "url": "https://htdikr.cafe24.com/skin-skin1",
     "img": "hitech",
     "name": "하이테크디젤",
@@ -257,12 +251,6 @@
     "img": "knh",
     "name": "케이앤에이치 토목자재",
     "descript": "케이앤에이치 토목자재"
-  },
-  {
-    "url": "https://seonggoe.co.kr/",
-    "img": "seonggeo",
-    "name": "성거호수펜션",
-    "descript": "성거호수펜션"
   },
   {
     "url": "https://coolhotnam.kr/",
@@ -301,22 +289,10 @@
     "descript": "아미코팜"
   },
   {
-    "url": "https://ddfpd0801.cafe24.com/",
-    "img": "ddfpd",
-    "name": "대동방재",
-    "descript": "대동방재"
-  },
-  {
     "url": "https://sb0704.cafe24.com/",
     "img": "sbcom",
     "name": "SB컴퍼니",
     "descript": "SB컴퍼니"
-  },
-  {
-    "url": "https://noa0717.cafe24.com/",
-    "img": "noah",
-    "name": "노아",
-    "descript": "노아"
   },
   {
     "url": "https://maybom0714.cafe24.com/",
@@ -329,12 +305,6 @@
     "img": "nextab",
     "name": "넥스탭 주식회사",
     "descript": "넥스탭 주식회사"
-  },
-  {
-    "url": "https://dokyung0608.cafe24.com/",
-    "img": "dokyung",
-    "name": "도경전국탁송",
-    "descript": "도경전국탁송"
   },
   {
     "url": "https://jiseunge.co.kr/",
@@ -421,22 +391,10 @@
     "descript": "행복솜틀집"
   },
   {
-    "url": "https://unigoodlife0215.cafe24.com/",
-    "img": "unigood",
-    "name": "유니굿라이프",
-    "descript": "유니굿라이프"
-  },
-  {
     "url": "http://thekingstudy0109.cafe24.com/",
     "img": "theking",
     "name": "티엔지",
     "descript": "더킹스터디카페"
-  },
-  {
-    "url": "https://teaseong0104.cafe24.com/",
-    "img": "teasong",
-    "name": "태성조경",
-    "descript": "태성조경"
   },
   {
     "url": "https://xn--h50b90bus927b9ufcpmo6d12d.com/",
@@ -451,7 +409,7 @@
     "descript": "에코산업"
   },
   {
-    "url": "https://blnutrition.co.kr/",
+    "url": "https://blnutrition1221.cafe24.com/skin-skin2",
     "img": "blnutrition",
     "name": "BL뉴트리션",
     "descript": "BL뉴트리션"
@@ -461,12 +419,6 @@
     "img": "meta_office",
     "name": "한샘비츠",
     "descript": "한샘비츠"
-  },
-  {
-    "url": "https://xn--2i0bk9g3qejvfc61b.com/",
-    "img": "biggraphic",
-    "name": "대박그래픽",
-    "descript": "대박그래픽"
   },
   {
     "url": "https://paracafe1111.cafe24.com/",
@@ -479,12 +431,6 @@
     "img": "open11-6",
     "name": "진지덮밥",
     "descript": "진지덮밥"
-  },
-  {
-    "url": "https://uricamome1102.cafe24.com/skin-skin1",
-    "img": "open11-5",
-    "name": "유리카모메",
-    "descript": "유리카모메"
   },
   {
     "url": "https://xn--ok1by1zd1ab8xg5ha.com/",
@@ -505,59 +451,10 @@
     "descript": "도시가스공사"
   },
   {
-    "url": "http://hs-pumps.co.kr/",
-    "img": "open11-1",
-    "name": "에이치에스펌프",
-    "descript": "에이치에스펌프"
-  },
-  {
-    "url": "https://lohashousing1007.cafe24.com",
-    "img": "lohas",
-    "name": "로하스하우징",
-    "descript": "로하스하우징"
-  },
-  {
-    "url": "https://studioon0830.cafe24.com/bizdemo128585/index.php",
-    "img": "studioon1",
-    "name": "Studioon",
-    "descript": "Studioon"
-  },
-  {
-    "url": "https://cosman0928.cafe24.com/",
-    "img": "cosman",
-    "name": "코스만경사로",
-    "descript": "코스만경사로"
-  },
-  {
-    "url": "http://sukomichi.co.kr",
-    "img": "sukomichi",
-    "name": "수코미치",
-    "descript": "맛과 분위기가 좋은 우리동네 이자카야"
-  },
-  {
-    "url": "http://글로리데이.com",
-    "img": "gloryday1",
-    "name": "글로리데이",
-    "descript": "글로리데이"
-  },
-  {
     "url": "https://xn--s39a64bwa012lqqf0pis2e994a.com/",
     "img": "hangil",
     "name": "한길민간조사기업",
     "descript": "한길민간조사기업"
-  },
-  {
-    "url": "http://제주도대리.com",
-    "img": "jejucar",
-    "name": "제주굿모닝",
-    "descript": "제주굿모닝"
-  },
-
-  {
-    "url": "http://security1.co.kr/",
-    "img": "onesecure",
-    "name": "원 정보통신",
-    "descript": "원 정보통신"
   },
   {
     "url": "https://daolanddaol.com",
@@ -566,28 +463,10 @@
     "descript": "다올상사"
   },
   {
-    "url": "https://getnuri.kr/",
-    "img": "getnuri",
-    "name": "갯누리",
-    "descript": "갯누리"
-  },
-  {
-    "url": "https://skjob06.com/",
-    "img": "sunggang",
-    "name": "성강개발",
-    "descript": "성강개발"
-  },
-  {
     "url": "http://www.choksan.co.kr/",
     "img": "sohak",
     "name": "소학레저",
     "descript": "소학레저"
-  },
-  {
-    "url": "http://chaeum0719.cafe24.com/",
-    "img": "chaum",
-    "name": "채움닷컴",
-    "descript": "채움닷컴"
   },
   {
     "url": "http://www.dal-tokk.co.kr/ ",
@@ -596,28 +475,10 @@
     "descript": "세화푸드"
   },
   {
-    "url": "https://soniafurni0712.cafe24.com",
-    "img": "soniafurni0712",
-    "name": "소니아퍼니처",
-    "descript": "소니아퍼니처"
-  },
-  {
     "url": "https://ganeshi0707.cafe24.com",
     "img": "ganeshi0707",
     "name": "도도한주얼리",
     "descript": "도도한주얼리"
-  },
-  {
-    "url": "https://dongyang0622.cafe24.com",
-    "img": "dongyang0622",
-    "name": "동양철학관",
-    "descript": "동양 철학원"
-  },
-  {
-    "url": "https://taebackchulhak.com/#anchor1",
-    "img": "taebak",
-    "name": "태백철학관",
-    "descript": "태백 철학원"
   },
   {
     "url": "https://atz0616.cafe24.com",
@@ -651,41 +512,10 @@
     "descript": "고온/고압 스팀세차"
   },
   {
-    "url": "https://xn--2j1br9j1dl64g.com/",
-    "img": "dareum",
-    "name": "다름클린",
-    "descript": "실내, 가전 청소솔루션"
-  },
-  {
     "url": "https://seolhwasanps.com/",
     "img": "seolhwasan",
     "name": "설화산펜션",
     "descript": "펜션 소개 및 예약 홈페이지"
-  },
-  {
-    "url": "https://youngjinsports.com/",
-    "img": "youngjin",
-    "name": "영진스포츠",
-    "descript": "러닝머신 쇼핑몰"
-  },
-
-  {
-    "url": "https://homeforest.co.kr/",
-    "img": "homeforest",
-    "name": "홈포레스트",
-    "descript": "인테리어 소품, 페인트 판매 쇼핑몰"
-  },
-  {
-    "url": "https://jungsuje.com/",
-    "img": "jungsuje",
-    "name": "정수제 고로케",
-    "descript": "수제 고로케"
-  },
-  {
-    "url": "https://바로설비.com/",
-    "img": "baro",
-    "name": "바로설비",
-    "descript": "설치, 수선, 방수, 고압세척 등 인테리어 전문"
   },
   {
     "url": "https://베리트.com/",
@@ -712,12 +542,6 @@
     "descript": "주방기구 식당이전 전문"
   },
   {
-    "url": "https://haesong0425.cafe24.com/",
-    "img": "haesong",
-    "name": "해송",
-    "descript": "살아있는 해물백화점"
-  },
-  {
     "url": "http://www.kooky.co.kr/",
     "img": "kooky",
     "name": "쿠키혼레이저",
@@ -725,7 +549,7 @@
   },
 
   {
-    "url": "http://hyonanum.com/",
+    "url": "http://hyonanum.cafe24.com",
     "img": "hyonanum",
     "name": "효나눔방문요양센터",
     "descript": "방문요양센터"
