@@ -106,7 +106,7 @@ const Header = () => {
               <li><Link to="/ServiceIntroduction" onClick={handleMenuClick}>서비스소개</Link></li>
               <li><Link to="/WebsiteDesign" onClick={handleMenuClick}>홈페이지 디자인</Link></li>
               <li><Link to="/EcommerceDesign" onClick={handleMenuClick}>쇼핑몰 디자인</Link></li>
-              <li><Link to="/Sample" onClick={handleMenuClick}>샘플</Link></li>
+              <li><Link to="/Template" onClick={handleMenuClick}>템플릿</Link></li>
               <li><Link to="/Portfolio" onClick={handleMenuClick}>포트폴리오</Link></li>
               <li className='inq_btn'>
                 <a href="https://forms.gle/FeC6sM6S1zm25F4Q7" target='_blank' rel="noreferrer" onClick={handleMenuClick}>
@@ -135,7 +135,7 @@ const Header = () => {
               <li><Link to="/ServiceIntroduction" onClick={handleMenuClick}>서비스소개</Link></li>
               <li><Link to="/WebsiteDesign" onClick={handleMenuClick}>홈페이지 디자인</Link></li>
               <li><Link to="/EcommerceDesign" onClick={handleMenuClick}>쇼핑몰 디자인</Link></li>
-              <li><Link to="/Sample" onClick={handleMenuClick}>샘플</Link></li>
+              <li><Link to="/Template" onClick={handleMenuClick}>샘플</Link></li>
               <li><Link to="/Portfolio" onClick={handleMenuClick}>포트폴리오</Link></li>
               <li className='inq_btn'>
                 <a href="https://forms.gle/FeC6sM6S1zm25F4Q7" target='_blank' rel="noreferrer" onClick={handleMenuClick}>

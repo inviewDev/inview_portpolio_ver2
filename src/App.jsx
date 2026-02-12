@@ -10,7 +10,7 @@ import Home from './main_home.jsx';
 import ServiceIntroduction from './sub/sub_p001.jsx';
 import WebsiteDesign from './sub/sub_p002.jsx';
 import EcommerceDesign from './sub/sub_p003.jsx';
-import Sample from './sub/sub_p004.jsx';
+import Template from './sub/sub_p004.jsx';
 import Portfolio from './sub/sub_p005.jsx';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -19,7 +19,7 @@ const routes = [
   { path: "/ServiceIntroduction", name: "Service Introduction", Component: ServiceIntroduction },
   { path: "/WebsiteDesign", name: "Website Design", Component: WebsiteDesign },
   { path: "/EcommerceDesign", name: "EcommerceDesign", Component: EcommerceDesign },
-  { path: "/Sample", name: "Sample", Component: Sample },
+  { path: "/Template", name: "Template", Component: Template },
   { path: "/Portfolio", name: "Portfolio", Component: Portfolio },
 ];
 
